@@ -14,4 +14,17 @@
     <None Remove="wwwroot\NewFolder1\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Remove="Views\Home\CartItem.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Home\CartItem.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Home\CartItem.cshtml" />
+    <_ContentIncludedByDefault Remove="wwwroot\image\paw row.png" />
+  </ItemGroup>
+
 </Project>

@@ -38,6 +38,26 @@ namespace Fur_Angels.Controllers
             return View();
         }
 
+        public IActionResult Consult()
+        {
+            return View();
+        }
+
+        public IActionResult Consultform()
+        {
+            return View();
+        }
+
+        public IActionResult Vetconsultform()
+        {
+            return View();
+        }
+
+        public IActionResult PetAbuse()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

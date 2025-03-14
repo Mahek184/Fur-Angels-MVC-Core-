@@ -481,6 +481,41 @@
             padding: 10px 0; /* Adjust padding for spacing */      
             height: 30px;
         }
+
+
+        body.modal-open {
+            overflow: hidden;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+        }
+
+        .cart-content {
+            background: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 8px;
+            width: 50%;
+            text-align: center;
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 28px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -491,7 +526,7 @@
 
         <div class="icon-container">
             <i class="fa fa-search search-icon"></i>
-            <i class="fa fa-shopping-cart cart-icon"></i>
+            <a href="/Home/CartItem"><i class="fa fa-shopping-cart cart-icon"></i></a>
         </div>
     </div>
 
@@ -770,9 +805,32 @@
         </div>
     </div>
 
+
     <!--last design of the page-->
     <div class="lastbanner">
         FurAngles 2025
+    </div>
+
+    <div class="container">
+        <h2>Pet Furniture, Toys & Accessories</h2>
+
+        <!-- Example Product -->
+        <div class="product">
+            <img src="https://via.placeholder.com/150" alt="Pet Toy">
+            <h4>Pet Toy</h4>
+            <p>$10.00</p>
+            <button class="btn btn-primary add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="cart-content">
+            <span class="close">&times;</span>
+            <h2>Your Cart</h2>
+            <p>Item added successfully!</p>
+            <button class="btn btn-success">Checkout</button>
+        </div>
     </div>
 
 
@@ -923,5 +981,33 @@
         });
 
     </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var modal = document.getElementById("cartModal");
+            var btns = document.querySelectorAll(".add-to-cart");
+            var closeBtn = document.querySelector(".close");
+
+            btns.forEach(function (btn) {
+                btn.addEventListener("click", function () {
+                    modal.style.display = "block";
+                    document.body.classList.add("modal-open");
+                });
+            });
+
+            closeBtn.addEventListener("click", function () {
+                modal.style.display = "none";
+                document.body.classList.remove("modal-open");
+            });
+
+            window.onclick = function (event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                    document.body.classList.remove("modal-open");
+                }
+            };
+        });
+    </script>
+
 </body>
 </html>
