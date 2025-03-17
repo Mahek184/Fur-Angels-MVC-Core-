@@ -1,4 +1,4 @@
-namespace Fur_Angels.Models
+namespace FurAngels.Models
 {
     public class ErrorViewModel
     {

@@ -531,14 +531,14 @@
                 <a asp-controller="Home" asp-action="PetShop">Online Shop</a>
                 <a asp-controller="Home" asp-action="Consult">Vet consult</a>
                 <a asp-controller="Home" asp-action="PetAbuse">Report Animal Abuse</a>
-                <a href="#">Dog Training</a>
+                <a asp-controller="Home" asp-action="Training">Dog Training</a>
                 <a asp-controller="Home" asp-action="CartItem">Blog</a>
-                <a href="LoginPage.aspx">Login</a>
+                <a asp-controller="Home" asp-action="Login">login</a>
 
             </div>
 
             <!-- Login Button -->
-            <button class="login-button" onclick="location.href='Login.aspx'">Login</button>
+            <a asp-controller="Home" asp-action="Login"><button class="login-button">Login</button></a>
         </div>
 
         <!-- Banner -->
